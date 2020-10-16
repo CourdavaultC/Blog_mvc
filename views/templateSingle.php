@@ -19,9 +19,9 @@
 	<link href="public/common-css/ionicons.css" rel="stylesheet">
 
 
-	<link href="public/layout-1/css/styles.css" rel="stylesheet">
+	<link href="public/single-post-1/css/styles.css" rel="stylesheet">
 
-	<link href="public/layout-1/css/responsive.css" rel="stylesheet">
+	<link href="public/single-post-1/css/responsive.css" rel="stylesheet">
 
 </head>
 <body >
@@ -38,7 +38,6 @@
 				<li><a href="#">Categories</a></li>
 				<li><a href="#">Contacts</a></li>
 				<li><a href="post&create">Ajouter un article</a></li>
-
 			</ul><!-- main-menu -->
 
 			<div class="src-area">
@@ -51,7 +50,7 @@
 		</div><!-- conatiner -->
     </header>
     
-    <?= $content ?>
+    <?=$content?>
 
     <footer>
 

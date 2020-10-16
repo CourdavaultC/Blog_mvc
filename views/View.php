@@ -24,6 +24,26 @@ class View
         echo $view;
     }
 
+    // Create and generate the view of all articles
+    public function generatePost($data){
+        // Select the content to send it
+        $content = $this->generateFile($this->_file, $data);
+
+        // Template
+        $view = $this->generateFile('views/templateSingle.php', array('t' => $this->_t, 'content' => $content));
+        echo $view;
+    }
+
+    // Generate the view of the form that create articles.
+    public function generateForm(){
+        $content = $this->generateFileSimple($this->_file);
+
+        // Template
+        $view = $this->generateFile('views/templateForm.php', array('t' => $this->_t, 'content' => $content));
+        echo $view;
+    }
+
+    // Artcile view generate
     private function generateFile($file, $data){
         if (file_exists($file)) {
             extract($data);
@@ -38,6 +58,15 @@ class View
         }else {
             throw new \Exception("Fichier ".$file." introuvable", 1);
         }
-    }   
+    }
+    
+    private function generateFileSimple($file){
+        if (file_exists($file)) {
+            require $file;
+        }
+        else {
+            throw new \Exception("Fichier ".$file." introuvable", 1);
+        }
+    }
 }
 ?>
